@@ -1,6 +1,8 @@
 version: 2.1
 
 description: >
+  This Orb is almost identical to circleci/jira, but adds the possibility to pass a commit message subject and body through parameters.
+
   This Orb reports the status of builds and deployments in CircleCI Projects to your Jira Cloud instance.
 
   Requires that [CircleCI for Jira](https://marketplace.atlassian.com/apps/1215946) be installed in the Jira *Cloud* instance.
