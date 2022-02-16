@@ -12,4 +12,4 @@ orbs:
 
 display:
   home_url: https://circleci.com/docs/2.0/jira-plugin/
-  source_url: https://github.com/CircleCI-Public/jira-connect-orb
+  source_url: https://github.com/protodev-site/jira-connect-orb
