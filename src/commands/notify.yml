@@ -110,7 +110,7 @@ steps:
           COMMIT_SUBJECT_PASSED="<< parameters.commit_subject >>"
           COMMIT_BODY_PASSED="<< parameters.commit_body >>"
           if [[ -n "${COMMIT_SUBJECT_PASSED}" || -n "${COMMIT_BODY_PASSED}" ]]; then
-            COMMIT_DETAILS="{ \"all_commit_details\": [{\"subject\": \"<< parameters.commit_subject >>\", \"body\":\"<< parameters.commit_body >>\" }] }"
+            COMMIT_DETAILS="{ \"all_commit_details\": [{\"subject\": \"<< parameters.commit_subject >>\", \"body\":\"<< parameters.commit_body >>\",\"branch\":\"\" }] }"
             ISSUE_KEYS=$(echo $COMMIT_DETAILS | jq '[.all_commit_details[].subject | scan("(<<parameters.issue_regexp>>)")   | .[] ] + [.all_commit_details[].branch | scan("(<<parameters.issue_regexp>>)")   | .[] ] + [if .branch then .branch else "" end | scan("(<<parameters.issue_regexp>>)")  | . [] ] + [if <<parameters.scan_commit_body>> then .all_commit_details[].body else "" end | scan("(<<parameters.issue_regexp>>)")   | .[] ]')
           else
             # must save as ISSUE_KEYS='["CC-4"]'
